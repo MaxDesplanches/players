@@ -1,6 +1,9 @@
-const playersRouter = express.Router()
+// const playersRouter = express.Router()
 
-module.exports = {
-    playersRouter
-  };
+
+// playersRouter.get("/player")
+
+// module.exports = {
+//     playersRouter
+//   };
   
