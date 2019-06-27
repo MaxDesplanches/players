@@ -6,8 +6,6 @@ services:
       image: node:8.11.3
       volumes:
         - ./api:/api
-      env_file:
-        - .env
       ports:
         - 8080:8080
       working_dir: /api
