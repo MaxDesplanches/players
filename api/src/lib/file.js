@@ -11,7 +11,7 @@ function updateFile(data) {
 function getFile() {
     return new Promise((resolve, reject) => {
     fs.readFile("./players.json", (err, data) => {
-            err ? reject(new Error(err.message)) : resolve(data.toString());
+            err ? reject(new Error(err.message)) : resolve(JSON.parse(data.toString()));
         });
     })
 }
