@@ -1,4 +1,4 @@
-const server = require("./server");
+const server = require("./controllers/players");
 const file = require("./lib/file");
 const lib = require("./lib/https");
 

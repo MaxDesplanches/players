@@ -8,4 +8,12 @@ function updateFile(data) {
     })
 }
 
-module.exports = { updateFile };
+function getFile() {
+    return new Promise((resolve, reject) => {
+    fs.readFile("./players.json", (err, data) => {
+            err ? reject(new Error(err.message)) : resolve(data.toString());
+        });
+    })
+}
+
+module.exports = { updateFile, getFile };
