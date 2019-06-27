@@ -43,7 +43,7 @@ function launchServer() {
     })
 
     app.listen(8080);
-
     console.info("listening on 8080");
+    return Promise.resolve();
 }
 module.exports = { launchServer };

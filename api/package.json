@@ -7,10 +7,14 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.1.4",
     "prettier": "^1.11.0"
   },
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "./node_modules/mocha/bin/mocha tests/players.js"
   },
   "author": "Max Desplanches",
   "license": "ISC"
