@@ -28,6 +28,20 @@ function launchServer() {
         })
     })
 
+    app.delete("/players/:id", (req, res) => {
+        file.getFile().then((data) => {
+            const id = parseInt(req.params.id, 10);
+            const filtered = data["players"].filter((element) => { return element["id"] !== id; });
+            return file.updateFile(JSON.stringify({players: filtered}));
+        })
+        .then(() => {
+            res.status(204).send();
+        })
+        .catch((err) => {
+            res.status(500).send({status: 500, error: err.message});
+        })
+    })
+
     app.listen(8080);
 
     console.info("listening on 8080");
