@@ -9,7 +9,7 @@ function launchServer() {
             res.send(sortById);
         })
         .catch((err) => {
-            res.send({status: 500, error: err.message});
+            res.status(500).send({status: 500, error: err.message});
         })
     })
 
@@ -17,10 +17,14 @@ function launchServer() {
         file.getFile().then((data) => {
             const id = parseInt(req.params.id, 10);
             const playerId = data["players"].find((element) => { return element["id"] === id; });
-            res.send(playerId);
+            if (playerId) {
+                res.send(playerId);
+            } else {
+                res.status(404).send({status: 404, error: "Player not found"});
+            }
         })
         .catch((err) => {
-            res.send({status: 500, error: err.message});
+            res.status(500).send({status: 500, error: err.message});
         })
     })
 
