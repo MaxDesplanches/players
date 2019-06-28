@@ -4,7 +4,7 @@ const file = require("../lib/file");
 
 function findPlayerById(data, id) {
     const playerId = data["players"].find((element) => { return element["id"] === id; });
-    return playerId ? true : false;
+    return playerId;
 }
 
 function launchServer() {
