@@ -46,7 +46,7 @@ describe("Router player", () => {
             chai.request("http://127.0.0.1:8080")
             .delete('/players/95')
             .end((err, res) =>{
-              res.should.have.status(204);
+              res.should.have.status(404);
               done();
             });
           });
