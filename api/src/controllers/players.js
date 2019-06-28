@@ -44,8 +44,8 @@ function launchServer() {
                 return true;
             }
         })
-        .then((result) => {
-            if (result) {
+        .then((isExist) => {
+            if (isExist) {
                 res.status(404).send({status: 404, error: "Player not found"});
             } else {
                 res.status(204).send();
