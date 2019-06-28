@@ -21,7 +21,7 @@ function launchServer() {
     app.get("/players/:id", (req, res) => {
         file.getFile().then((data) => {
             const id = parseInt(req.params.id, 10);
-            const playerId = data["players"].find((element) => { return element["id"] === id; });
+            const playerId = findPlayerById(data, id);
             if (playerId) {
                 res.send(playerId);
             } else {
